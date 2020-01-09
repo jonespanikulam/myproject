@@ -1,0 +1,10 @@
+---
+- hosts: node1
+  tasks:
+  - name: example for simple loop
+    yum: 
+      name: "{{ item }}"
+      state: latest 
+    with_items: 
+      - nmap
+      - net-tools 

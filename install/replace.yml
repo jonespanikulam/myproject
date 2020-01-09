@@ -1,0 +1,8 @@
+---
+- hosts: node1
+  tasks:
+  - name: replace content
+    lineinfile: 
+      path: /var/www/html/index.html
+      regexp: '^welcome'
+      line: jones

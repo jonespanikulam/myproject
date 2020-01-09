@@ -1,0 +1,12 @@
+---
+- hosts: node1
+  tasks:
+  - name: jinja two template example. 
+    template:
+      src: arsenal.j2
+      dest: /home/jones/arsenal.txt
+
+    vars:
+      variable1: "hello world!!"
+      variable2: "jones j panikulam"
+

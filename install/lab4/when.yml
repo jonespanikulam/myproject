@@ -1,0 +1,9 @@
+---
+- hosts: all
+  tasks:
+  - name: install mariadb if sufficient disk space
+    yum:
+      name: mariadb-server
+      state: latest
+    with_items: "{{ ansible_mounts }}"  
+    when: item.mount == "/"  and item.size_available > 1000000

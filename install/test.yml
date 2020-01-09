@@ -1,0 +1,14 @@
+---
+- hosts: node1
+  tasks: 
+  - name: install http
+    yum: name=httpd state=latest
+  - name: start http service
+    service: name=httpd state=restarted
+  - name:  create httpd file
+    copy:
+      content: welcome to my test page
+      dest: /var/www/html/index.html
+      mode: 0644
+  - name: open firewalld
+    service: name=http permanent=true state=enabled immediate=yes

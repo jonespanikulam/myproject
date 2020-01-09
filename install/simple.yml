@@ -1,0 +1,14 @@
+---
+- hosts: node1
+  tasks:
+  - name: install vsftpd
+    yum: name=vsftpd
+  - name: enable vsftpd
+    service: name=vsftpd state=started
+  - name: create read me file
+    copy:
+      content: "welcome to vsftpd"
+      dest: /var/ftp/pub/README
+      force: no
+      mode: 044
+

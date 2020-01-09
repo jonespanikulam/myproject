@@ -1,0 +1,9 @@
+[package]
+smb_package=smb
+ftp_package=ftp
+web_package=httpd
+
+[service]
+smb_service=smb
+ftp_service=vsftpd
+web_service=httpd

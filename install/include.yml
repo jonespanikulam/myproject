@@ -1,0 +1,12 @@
+---
+- hosts: node1
+  tasks:
+  - name: read smb.yml file for include fuction
+    include: smb.yml
+    vars:
+      package: httpd
+      service: httpd
+      state: latest
+    register: output
+
+
